@@ -1,5 +1,7 @@
 This is a sample repo I made for @seanmtracey to show him how Turbo can be used without Rails.
 
+The application uses an out-of-the-box express app made with [express-generator](https://expressjs.com/en/starter/generator.html). If you're interested in the Turbo parts, [look at this commit](https://github.com/joshvince/turbo-off-the-rails/commit/a30c5039248cbe40705b617985897ca3f15d245f).
+
 ## Installing the application
 - npm install
 
