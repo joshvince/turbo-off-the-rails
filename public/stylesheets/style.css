@@ -6,3 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+
+.turbo-example {
+  display: flex;
+  flex-direction: column;
+}
+
+.turbo-example a {
+  padding-bottom: 14px;
+}
+
+turbo-frame {
+  border: 1px solid blue;
+  border-radius: 10px;
+  padding: 14px;
+}

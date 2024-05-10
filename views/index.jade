@@ -2,4 +2,22 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Here are two examples on using Turbo:
+  .turbo-example
+    h2 Triggering turbo actions on clicks
+    p Turbo intercepts links in the same domain, and will replace parts of the DOM that are inside Turbo Frames.
+    p Check the network tab to see the response, which only contains the partial HTML snippet containing the Turbo Frame
+    p Turbo will 'morph' the DOM and figure out what needs to be replaced.
+
+    a(href='/trek/click' data-turbo-frame='click-trek-quote') Click me for a trek quote
+
+    <turbo-frame id='click-trek-quote'>Standing by for a trek quote...</turbo-frame>
+
+    p (also, open the network tab and hover the link to see Turbo's prefetch in action. Turbo links are pre-fetched and cached to improve 'speed')
+    a(href='/trek/click' data-turbo-frame='click-trek-quote' data-turbo-prefetch='false') Clicking me will also update the frame, but prefetch has been disabled
+
+  .turbo-example
+    h2 Eager loading turbo frames on load
+    p The element below will be loaded from the server in a separate request after the page loads because the src attribute is set
+    p It fetches a different turbo frame served from a completely different endpoint. It uses the ID to figure out what to replace.
+    <turbo-frame id='auto-load-trek-quote' src='/trek'></turbo-frame>
